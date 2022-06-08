@@ -1,0 +1,40 @@
+.footer {
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+}
+
+.go-up-footer{
+    height: 1.3rem;
+    display: flex;
+    justify-content: center;
+    background-color: darkgray;
+    align-items: center;
+    font-size: medium;
+}   
+
+.client-info{
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-row{
+    display: flex;
+    flex-direction: row;
+    height: 10rem;
+}
+
+.my-info{
+    flex: 1;
+    align-items: center;
+    display: flex;
+    padding-left: 1rem;
+}
+
+.empty-footer{
+    flex: 1;
+}

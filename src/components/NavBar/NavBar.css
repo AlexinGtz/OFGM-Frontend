@@ -1,0 +1,6 @@
+.nav-bar {
+    height: 4rem;
+    width: 100%;
+    background-color: rgb(76, 128, 128);
+    display: flex;
+}
