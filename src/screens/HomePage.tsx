@@ -1,7 +1,10 @@
 import React from 'react'
 
-export const HomePage = () => {
+export const HomePage = (props: any) => {
+
   return (
-    <div>HomePage</div>
+    <div>
+      <h2>HomePage</h2>
+    </div>
   )
 }
