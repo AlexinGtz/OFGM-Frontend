@@ -1,6 +1,8 @@
+@import '../../index.css';
+
 .nav-bar {
-    height: 4rem;
+    height: 6rem;
     width: 100%;
-    background-color: rgb(76, 128, 128);
+    background-color: var(--main-color);
     display: flex;
 }

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 
 export const TestScreen = (props: any) => {
 
-  const [id, setId] = useState("");
+  const [id, setId] = useState("");  
+  const counter = useSelector((state: any) => state.counter)
   const [pokemon, setPokemon]: [any, any]= useState({});
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/'+ id)
     .then(response => response.json())
     .then(pokemon => {
-      console.log(pokemon);
       setPokemon(pokemon);
     });
   }, [id]);
@@ -18,7 +19,6 @@ export const TestScreen = (props: any) => {
     fetch('https://pokeapi.co/api/v2/pokemon/pikachu')
     .then(response => response.json())
     .then(pokemon => {
-      console.log(pokemon);
       setPokemon(pokemon);
     });
   }, []);
@@ -35,7 +35,7 @@ export const TestScreen = (props: any) => {
       <h2>TestScreen</h2>
       <h4>Name: {pokemon.name}</h4>
       <h4>ID: {pokemon.id}</h4>
-
+      <h1>{counter}</h1>
       <input type={inputType} value={id} onChange={(event) => onInputChangeHandler(event.target.value)} />
     </div>
   )

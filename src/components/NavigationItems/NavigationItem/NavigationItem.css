@@ -21,9 +21,8 @@
 
 @media (min-width: 500px) {
   .NavigationItem {
-    margin: 0 10px;
+    margin: 0 1rem;
     display: flex;
-    height: 100%;
     width: 10em;
     align-items: center;
     text-align: center;
@@ -39,8 +38,8 @@
   .NavigationItem a:hover,
   .NavigationItem a:active,
   .NavigationItem a.active {
-    background-color: #4973d4;
-    border-bottom: 4px solid #40a4c8;
+    background-color: var(--accent-color);
+    border-bottom: 4px solid var(ffffff);
     color: white;
   }
 }
