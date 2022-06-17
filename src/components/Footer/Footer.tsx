@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className='footer'>
         <div className='go-up-footer'>
@@ -24,5 +24,3 @@ const Footer = () => {
     </div>
   )
 }
-
-export default Footer

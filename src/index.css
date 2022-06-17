@@ -1,8 +1,23 @@
+@font-face {
+  font-family: "Gruppo";
+  src: url(./assets/Gruppo-Regular.ttf) format('ttf'), local("Gruppo");
+}
+
+:root {
+  --main-color: #F28B30;
+  --accent-color: #024959;
+  --text-color: #024959;
+  --dark-color: #262626;
+  --small-text: 24px;
+  --medium-text: 28px;
+  --large-text: 36px;
+  --x-large-text: 48px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Gruppo';
+  font-size: larger;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
