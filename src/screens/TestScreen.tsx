@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { decrement } from '../redux/reducers/testReducer';
 
 export const TestScreen = (props: any) => {
 
   const [id, setId] = useState("");  
   const counter = useSelector((state: any) => state.counter)
   const [pokemon, setPokemon]: [any, any]= useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/'+ id)
@@ -37,6 +39,7 @@ export const TestScreen = (props: any) => {
       <h4>ID: {pokemon.id}</h4>
       <h1>{counter}</h1>
       <input type={inputType} value={id} onChange={(event) => onInputChangeHandler(event.target.value)} />
+      <button onClick={() => dispatch(decrement())}>Restar</button>
     </div>
   )
 }

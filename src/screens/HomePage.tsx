@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../redux/reducers/testReducer';
-import { Link } from 'react-router-dom'
 
 export const HomePage = () => {
-  const counter = useSelector((state: any) => state.counter);
+  const { counter } = useSelector((state: any) => state);
   const [stateCounter, setStateCounter] = useState(0);
   const dispatch = useDispatch();
 
@@ -20,7 +19,7 @@ export const HomePage = () => {
       <h2>HomePage</h2>
       <h1>Global: {counter}</h1>
       <h1>Local: {stateCounter}</h1>
-      <button onClick={() => setCounters()}>A</button>
+      <button onClick={() => setCounters()}>Sumar</button>
     </div>
   )
 }
