@@ -18,13 +18,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - env:
+        runEnv: ''
     - run: npm ci
     #- run: npm run build
-    - run: set -x
-    - run: ls -al
     - run: echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1
-    - run: export environment=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
-    - run: numero=5
-    - run: echo $numero
-    - run: echo ${{ github.ref }} | tr "/" "\n" | tail -1 
-    - run: echo "$environment"
+    - run: env.runEnv=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
+    - run: echo $env.runEnv
