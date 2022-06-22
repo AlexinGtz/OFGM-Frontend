@@ -22,7 +22,7 @@ jobs:
         cache: 'npm'
     - run: npm ci
     #- run: npm run build
-    - run: echo $env.runEnv
+    - run: echo $runEnv
     - run: echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1
-    - run: env.runEnv=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
-    - run: echo $env.runEnv
+    - run: runEnv=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
+    - run: echo $runEnv
