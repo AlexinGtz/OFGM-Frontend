@@ -14,7 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        run: ./deploy.sh
-        with: 
-          GITHUB_REF: ${{ github.ref }}
+        run: ./deploy.sh ${{ github.ref }}
         shell: bash
