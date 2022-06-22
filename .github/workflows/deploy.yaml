@@ -12,17 +12,20 @@ jobs:
         node-version: [14.x]
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      env:
-        runEnv: ''
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    #- run: npm run build
-    - run: echo $runEnv
-    - run: echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1
-    - run: runEnv=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
-    - run: echo $runEnv
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      # - run: npm ci
+      # - run: npm run build
+      - run: |
+        npm ci
+        echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1
+        runEnv=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
+        echo $runEnv
+      # - run: echo $runEnv
+      # - run: echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1
+      # - run: runEnv=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
+      # - run: echo $runEnv
