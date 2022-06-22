@@ -24,5 +24,7 @@ jobs:
     - run: ls -al
     - run: echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1
     - run: export environment=$(echo ${{ github.ref }} | tr "/" "\n" | tail -2 | head -1)
+    - run: numero=5
+    - run: echo $numero
     - run: echo ${{ github.ref }} | tr "/" "\n" | tail -1 
     - run: echo "$environment"
