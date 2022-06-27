@@ -2,7 +2,7 @@
 
 npm ci
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install
-runEnv=$(echo $1 | tr "/" "\n" | tail -2 | head -1)
+runEnv=$1#$(echo $1 | tr "/" "\n" | tail -2 | head -1)
 export AWS_ACCESS_KEY_ID=$2
 export AWS_SECRET_ACCESS_KEY=$3
 
