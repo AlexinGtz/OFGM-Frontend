@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Gruppo";
-  src: url(./assets/Gruppo-Regular.ttf) format('ttf'), local("Gruppo");
-}
-
 :root {
   --main-color: #F28B30;
   --accent-color: #024959;
@@ -25,4 +20,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: "Gruppo";
+  src: local("Gruppo"),
+    url("./assets/Gruppo-Regular.ttf") format("truetype");
+  font-weight: normal;
 }

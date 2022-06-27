@@ -1,0 +1,43 @@
+.constructionLogo {
+    width: 15rem;
+    height: 15rem;
+    animation: spin 8s infinite linear;
+}
+
+.constructionMainDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 15rem 30%;
+}
+
+.constructionText {
+    font-size: 3em;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .constructionMainDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15rem 15rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .constructionMainDiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 8rem 1rem;
+    }
+}
