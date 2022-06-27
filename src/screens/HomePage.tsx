@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { increment } from '../redux/reducers/testReducer';
+import GIF from '../assets/giphy.gif';
+import { AnimatedImage } from '../components/AnimatedImage/AnimatedImage';
 
 export const HomePage = () => {
   const { counter } = useSelector((state: any) => state);
@@ -11,7 +13,7 @@ export const HomePage = () => {
     dispatch(increment())
     setStateCounter((state) => {
       return state + 1;
-    })
+    });
   }
 
   return (
@@ -19,7 +21,9 @@ export const HomePage = () => {
       <h2>HomePage</h2>
       <h1>Global: {counter}</h1>
       <h1>Local: {stateCounter}</h1>
+      <img src={GIF} />
       <button onClick={() => setCounters()}>Sumar</button>
+      <AnimatedImage />
     </div>
   )
 }
