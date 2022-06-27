@@ -8,10 +8,6 @@ secretKey=$3
 
 npm run build
 
-ls -al
-
-aws --version --region=us-east-1
-
-aws s3 sync ./build s3://ofgm-backend-qa-ofgmwebpage-9l73f84jk8mg
-aws cloudfront create-invalidation --distribution-id E1RKAY3OTOGCHL --paths '/*'
+aws s3 sync ./build s3://ofgm-backend-qa-ofgmwebpage-9l73f84jk8mg --region=us-east-1
+aws cloudfront create-invalidation --distribution-id E1RKAY3OTOGCHL --paths '/*' --region=us-east-1
 
