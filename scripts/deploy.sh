@@ -13,5 +13,5 @@ ls -al
 aws --version
 
 aws s3 sync ./build s3://ofgm-backend-qa-ofgmwebpage-9l73f84jk8mg
-aws cloudfront create-invalidation --distribution-id EDFDVBD6EXAMPLE --paths '/*'
+aws cloudfront create-invalidation --distribution-id E1RKAY3OTOGCHL --paths '/*'
 
