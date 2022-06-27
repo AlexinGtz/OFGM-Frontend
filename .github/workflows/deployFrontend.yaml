@@ -14,5 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        run: ./deploy.sh ${{ github.ref }} ${{ secrets.AWS_ACCESS_KEY }} ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: ./scripts/deploy.sh ${{ github.ref }} ${{ secrets.AWS_ACCESS_KEY }} ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         shell: bash
