@@ -1,7 +1,7 @@
 name: Deploy
-on: workflow_dispatch
-  # release:
-  #   types: [published]
+on: 
+  release:
+    types: [published]
 
 jobs:
   build:
