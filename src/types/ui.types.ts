@@ -1,3 +1,7 @@
+export type NavBarProps = {
+    className?: string,
+}
+
 export type Item = {
     link: string,
     tabName: string,

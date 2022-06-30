@@ -2,7 +2,7 @@ import React from "react";
 import "./NavigationItems.css";
 import NavigationItem from "./NavigationItem/NavigationItem";
 import { UserTypes } from "../../utils/common.types";
-import { Item } from "./NavigationItems.types";
+import { Item } from "../../types/ui.types";
 
 const isAuth = false;
 const userType = 2;
