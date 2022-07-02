@@ -1,8 +1,10 @@
-@import '../../index.css';
-
-.nav-bar {
+.navBar {
     height: 6rem;
     width: 100%;
     background-color: var(--main-color);
     display: flex;
+}
+
+.navVarNavigationItems {
+    width: 50%;
 }

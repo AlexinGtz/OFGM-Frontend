@@ -8,16 +8,19 @@ const getConcerts = [
         concertThumbnailKey: "2022/concerts/thumbnails/some-key.jpg",
         concertPhotoKey: "2022/concerts/pictures/some-key.jpg",
         conductor: "Alex Gutierrez",
+        concertType: 'paid',
         soloists: [],
         program: {
           composers: [
             {
               id: "1",
               name: "Ludwig Van Beethoven",
+              shortName: "Beethoven",
             },
             {
               id: "2",
-              name: "Franz Liszt"
+              name: "Franz Liszt",
+              shortName: "Liszt",
             }
           ],
           pieces: [
@@ -64,6 +67,7 @@ const getConcerts = [
         concertThumbnailKey: "2022/concerts/thumbnails/some-key.jpg",
         concertPhotoKey: "2022/concerts/pictures/some-key.jpg",
         conductor: "Alex Gutierrez",
+        concertType: 'free',
         soloists: [
             {
                 "name": "Alejo Rodriguez",
@@ -79,10 +83,12 @@ const getConcerts = [
             {
               id: "1",
               name: "Wolfgang Amadeus Mozart",
+              shortName: "Mozart",
             },
             {
               id: "2",
-              name: "Gabriel Faure"
+              name: "Gabriel Faure",
+              shortName: "Faure",
             }
           ],
           pieces: [
