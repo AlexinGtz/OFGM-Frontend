@@ -24,7 +24,6 @@ export const TestScreen = (props: any) => {
       setPokemon(pokemon);
     });
   }, []);
-  
 
   const onInputChangeHandler = (id: string) => {
     setId(id);
@@ -37,7 +36,7 @@ export const TestScreen = (props: any) => {
       <h2>TestScreen</h2>
       <h4>Name: {pokemon.name}</h4>
       <h4>ID: {pokemon.id}</h4>
-      <h1>{counter}</h1>
+      <h1>Couter: {counter}</h1>
       <input type={inputType} value={id} onChange={(event) => onInputChangeHandler(event.target.value)} />
       <button onClick={() => dispatch(decrement())}>Restar</button>
     </div>

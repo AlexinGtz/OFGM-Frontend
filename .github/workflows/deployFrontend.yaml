@@ -1,0 +1,18 @@
+name: Deploy
+on: 
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: deploy
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        run: ./scripts/deploy.sh ${{ github.ref }} ${{ secrets.AWS_ACCESS_KEY }} ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        shell: bash
