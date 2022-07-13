@@ -5,6 +5,9 @@ export const screenMessageSlice = createSlice({
   initialState: {
     message: 'This is a success message',
     type: 'error',
+    enableButton: false,
+    buttonText: 'hello',
+    buttonUrl: 'null',
     show: false
   },
   reducers: {
@@ -18,7 +21,8 @@ export const screenMessageSlice = createSlice({
     hideMessage: (state) => {
         return {
             ...state,
-            show: false
+            show: false,
+            enableButton: false,
         }
     }
   },

@@ -66,15 +66,17 @@ export const Tickets = () => {
       email: mail,
       name: name,
       concertId: id,
-    }).then((_) => {
+    }).then((response) => {
       dispatch(setAndShowMessage({
         message: 'Entrada Reservada con Exito',
-        type: 'success'
+        type: 'success',
+        enableButton: true,
+        buttonText: 'Entrada',
+        buttonUrl: response.pdfUrl,
       }))
     }).catch(err => {
-      console.log(err);
       dispatch(setAndShowMessage({
-        message: 'Hubo un error reservando. Intenta mas tarde',
+        message: err.response.data.message,
         type: 'error'
       }))
     })

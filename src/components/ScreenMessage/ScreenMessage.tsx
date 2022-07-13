@@ -12,15 +12,19 @@ export const ScreenMessage = () => {
         dispatch(hideMessage())
     }
 
-    const messageClass = `screenMessage ${screenMessage.type}`
-
     return (
         <div>
             <div className='backdrop' onClick={messageHandler}/>
             <div className='screenMessageMainDiv'>
-                <h2 className={messageClass}>{screenMessage.message}</h2>
-                <div className='screenMessageButton'>
-                    <Button onClick={messageHandler}>Aceptar</Button>
+                <h2 className={screenMessage.type}>{screenMessage.message}</h2>
+                {
+                    screenMessage.enableButton && 
+                    <a href={screenMessage.buttonUrl} className="screenMessageAnchor">{screenMessage.buttonText}</a>
+                }
+                <div className='screenMessageButtonDiv'>
+                    <div className='screenMessageButton'>
+                        <Button onClick={messageHandler}>Cerrar</Button>
+                    </div>
                 </div>
             </div>
         </div>

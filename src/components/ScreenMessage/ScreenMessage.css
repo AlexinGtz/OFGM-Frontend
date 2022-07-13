@@ -12,10 +12,6 @@
     align-items: center;
 }
 
-.screenMessage {
-    margin-bottom: 6rem;
-}
-
 .backdrop{
     width: 100%;
     height: 100%;
@@ -29,9 +25,28 @@
 .screenMessageButton {
     width: 6rem;
     height: 3rem;
-    margin: 3rem 0;
+    margin: 2rem 0;
 }
 
 .error{
     color: red;
+}
+
+.screenMessageButtonDiv {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 90%;
+    height: 8rem;
+}
+
+.screenMessageAnchor {
+    font-size: x-large;
+    text-decoration: underline;
+    color: var(--accent-color);
+    width: 3rem;
+}
+
+.success {
+    color: green;
 }
