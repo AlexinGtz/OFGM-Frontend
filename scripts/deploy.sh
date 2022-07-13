@@ -6,7 +6,11 @@ runEnv=$(echo $1 | tr "/" "\n" | tail -2 | head -1)
 export AWS_ACCESS_KEY_ID=$2
 export AWS_SECRET_ACCESS_KEY=$3
 
+ls -a
+
 npm run build
+
+ls -a
 
 echo $runDev
 
