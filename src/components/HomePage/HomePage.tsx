@@ -42,7 +42,7 @@ export const HomePage = () => {
 
   return (
     <div className='homePageMainDiv'>
-      <h1>Orquesta Filarmónica Gustav Mahler</h1>
+      <h1 className='homePageTitle'>Orquesta Filarmónica Gustav Mahler</h1>
       <img src="" alt="" />
       <div className='homePageInformation'>
         <h2>¿Quiénes Somos?</h2>

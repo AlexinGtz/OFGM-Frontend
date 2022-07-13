@@ -26,15 +26,22 @@ const SingleConcert = (props: SingleConcertProps) => {
         navigate(`/tickets/${props.concert.id}`)
     }
 
+    const reserveButton = (
+        <div className='singleConcertsTicketsButton'>
+                <Button onClick={onTicketClick}>{props.concert.concertType === 'free' ? 'Reservar' : 'Comprar'}</Button>
+        </div>
+    )
+
+    const concertDate = new Date(props.concert.concertDate);
+    const today = new Date();
+
   return (
     <div className='singleConcertsMainDiv'>
         <div className='singleConcertsDate'>
             <h1 className='singleConcertsDateNumberText'>{dayNumber}</h1>
             <h2 className='singleConcertsDateText'>{month}</h2>
             <h2 className='singleConcertsDateText'>{year}</h2>
-            <div className='singleConcertsTicketsButton'>
-                <Button onClick={onTicketClick}>{props.concert.concertType === 'free' ? 'Reservar' : 'Comprar'}</Button>
-            </div>
+            {concertDate >= today && reserveButton}
         </div>
         <Separator height='16rem' />
         <div className='singleConcertsInfo'>
