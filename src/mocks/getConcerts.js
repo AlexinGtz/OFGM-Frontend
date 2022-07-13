@@ -5,6 +5,7 @@ const getConcerts = [
         concertLocationName: "Centro Cultural Constitucion",
         concertLocationURL: "https://goo.gl/maps/r2VXWGXW3VqxXogh8",
         concertDate: "2021-12-10T19:00:00-06:00",
+        concertYear: "2021",
         concertThumbnailKey: "2022/concerts/thumbnails/some-key.jpg",
         concertPhotoKey: "2022/concerts/pictures/some-key.jpg",
         conductor: "Alex Gutierrez",
@@ -67,6 +68,7 @@ const getConcerts = [
         concertThumbnailKey: "2022/concerts/thumbnails/some-key.jpg",
         concertPhotoKey: "2022/concerts/pictures/some-key.jpg",
         conductor: "Alex Gutierrez",
+        concertYear: "2022",
         concertType: 'free',
         soloists: [
             {
@@ -121,7 +123,7 @@ const getConcerts = [
             },
           ],
         },
-      }
+      },
 ];
 
 export default getConcerts;

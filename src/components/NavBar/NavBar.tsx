@@ -9,7 +9,7 @@ import { Item, NavBarProps } from '../../types/ui.types'
 
 const items: Array<Item> = [{
     link: '/concerts',
-    tabName: 'Concerts',
+    tabName: 'Conciertos',
     authNeeded: false,
     userType: UserTypes.ANY,
   },

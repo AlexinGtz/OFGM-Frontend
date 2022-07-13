@@ -1,9 +1,11 @@
 import React from 'react'
 
-import './Separator.css'
-
-export const Separator = () => {
+export const Separator = (props: any) => {
   return (
-    <div className='separator' />
+    <div style={{
+      'height': `${props.height}`,
+      'backgroundColor': 'var(--accent-color)',
+      'width': '1px',
+    }} />
   )
 }

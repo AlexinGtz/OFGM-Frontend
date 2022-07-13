@@ -33,15 +33,15 @@ const SingleConcert = (props: SingleConcertProps) => {
             <h2 className='singleConcertsDateText'>{month}</h2>
             <h2 className='singleConcertsDateText'>{year}</h2>
             <div className='singleConcertsTicketsButton'>
-                <Button onClick={onTicketClick}>{props.concert.concertType === 'free' ? 'Conseguir' : 'Comprar'}</Button>
+                <Button onClick={onTicketClick}>{props.concert.concertType === 'free' ? 'Reservar' : 'Comprar'}</Button>
             </div>
         </div>
-        <Separator />
+        <Separator height='16rem' />
         <div className='singleConcertsInfo'>
             <h1 className='singleConcertsTitle'>{props.concert.concertTitle}</h1>
             <div className='singleConcertsTimeLocation'>
                 <h2 className='singleConcertsText'>{time}</h2>
-                <Separator />
+                <Separator height='2rem' />
                 <h2 className='singleConcertsText'>{props.concert.concertLocationName}</h2>
             </div>
             <div className='singleConcertsMainInfo'>
@@ -51,7 +51,7 @@ const SingleConcert = (props: SingleConcertProps) => {
                     {props.concert.soloists.length > 0 && <h2 className='singleConcertsMainText'>SOLISTAS</h2>}
                     {props.concert.soloists.map((solo) => <h3 key={solo.name} className='singleConcertsText'>{solo.name}, {solo.instrument}</h3>)}
                 </div>
-                <Separator />
+                <Separator height='10rem'/> {/**MAke Varaible */}
                 <div className='singleConcertsProgramInfo'>
                     <h2 className='singleConcertsMainText'>PROGRAMA</h2>
                     {props.concert.program.composers.map(

@@ -32,7 +32,15 @@ export type Concert = {
     }
 }
 
-export type modalConcert = Partial<Concert>
+export type PartialConcert = Partial<Concert>
+
+export type ConcertDate = {
+    dayName: string,
+    dayNumber: string,
+    month: string,
+    year: string,
+    time: string, 
+}
 
 export type person = {
     name: string,

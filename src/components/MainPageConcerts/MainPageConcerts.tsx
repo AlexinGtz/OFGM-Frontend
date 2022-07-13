@@ -22,11 +22,11 @@ export const MainPageConcerts = (props: ConcertProps) => {
                 <h3>{dayNumber} de {month}</h3>
                 <h3 className='mainPageConcertsTime'>{time}</h3>
             </div>
-            <div className='mainPageConcertsButton'>
+            {/* <div className='mainPageConcertsButton'>
                 <div className='mainPageConcertsButtonClass'>  
                     <Button>{props.concert.buttonText || 'Detalles'}</Button>
                 </div>
-            </div>
+            </div> */}
         </div>
     </div>
   )

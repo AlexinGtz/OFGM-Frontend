@@ -1,4 +1,14 @@
-export const convertDateTime = (concertDate: string) => {
+export const convertDateTime = (concertDate: string | undefined) => {
+
+    if(!concertDate) {
+        return {
+            dayName: '',
+            dayNumber: '',
+            month: '',
+            year: '',
+            time: '', 
+        }
+    }
 
     const date = new Date(concertDate);
     const options: Intl.DateTimeFormatOptions = { 
@@ -19,4 +29,11 @@ export const convertDateTime = (concertDate: string) => {
         year: currentDate[5].split(',')[0],
         time: currentDate[6], 
     }
+}
+
+export const isEmptyOrNull = (param: any) => {
+    if(!param || param === "" || param === " "){
+        return true;
+    }
+    return false;
 }
