@@ -12,8 +12,8 @@ echo $runDev
 
 if [[ $runEnv = 'qa' ]]
 then
-    S3_BUCKET='ofgm-backend-qa-ofgmwebpage-9l73f84jk8mg'
-    CF_DIST='E1RKAY3OTOGCHL'
+    S3_BUCKET='ofgm-backend-qa-ofgmwebpage-11u8h9gmfmibh'
+    CF_DIST='E1ARAC1POVTD4T'
 elif [[ $runEnv = 'prod' ]]
 then
     S3_BUCKET='testBucekt'

@@ -19,7 +19,7 @@ const SingleConcert = (props: SingleConcertProps) => {
     } = convertDateTime(props.concert.concertDate);
 
     const onDetailsClick = () => {
-        navigate(`/concerts/${props.concert.id}`);
+        navigate(`/tickets/${props.concert.id}`);
     }
 
     const onTicketClick = () => {

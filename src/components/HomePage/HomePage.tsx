@@ -27,7 +27,7 @@ export const HomePage = () => {
     // const selectedConcert = concerts.find((c: Concert) => c.id === concertId);
     // setShowModal(show);
     // setPartialConcert(selectedConcert);
-    navigate(`/concerts/${concertId}`)
+    navigate(`/tickets/${concertId}`)
   }
 
   const mapConcertToProps = (concert: Concert) => {
