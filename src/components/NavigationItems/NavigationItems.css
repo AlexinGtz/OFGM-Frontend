@@ -3,16 +3,16 @@
     padding: 0;
     list-style: none;
     display: flex;
-    flex-flow: column;
+    flex: 1;
+    flex-flow: row;
+    flex-direction: row-reverse;
     align-items: center;
     height: 100%;
     width: 100%;
 }
 
-@media (min-width: 900px){
-    .NavigationItems{
-        flex: 1;
-        flex-flow: row;
-        flex-direction: row-reverse;
+@media(max-width: 500px) { 
+    .NavigationItems {
+        margin-right: 1rem;
     }
 }
