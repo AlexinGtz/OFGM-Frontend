@@ -28,8 +28,20 @@
     flex-direction: column;
 }
 
+.homePageOrchestra {
+    width: 80%;
+}
+
 @media(max-width: 750px){
     .homePageConcerts {
         width: 80%;
+    }
+
+    .homePageOrchestra {
+        width: 95%;
+    }
+
+    .homePageParagraph {
+        width: 100%;
     }
 }

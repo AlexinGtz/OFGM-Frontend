@@ -6,6 +6,7 @@ import { Concert, PartialConcert } from '../../types/concerts.types';
 import { API } from '../../utils/api';
 import './HomePage.css'
 import { useNavigate } from 'react-router-dom';
+import WholeOrchestra from '../../assets/WholeOrchestra.jpg';
 
 export const HomePage = () => {
   const { concerts } = useSelector((state: any) => state);
@@ -27,7 +28,7 @@ export const HomePage = () => {
     // const selectedConcert = concerts.find((c: Concert) => c.id === concertId);
     // setShowModal(show);
     // setPartialConcert(selectedConcert);
-    navigate(`/tickets/${concertId}`)
+    navigate(`/concerts/${concertId}`)
   }
 
   const mapConcertToProps = (concert: Concert) => {
@@ -43,7 +44,7 @@ export const HomePage = () => {
   return (
     <div className='homePageMainDiv'>
       <h1 className='homePageTitle'>Orquesta Filarmónica Gustav Mahler</h1>
-      <img src="" alt="" />
+      <img src={WholeOrchestra} alt="Orchestra Picture" className='homePageOrchestra' />
       <div className='homePageInformation'>
         <h2>¿Quiénes Somos?</h2>
         <h3 className='homePageParagraph'>Una orquesta que busca promover la música académica dentro y fuera de la ZMG. Dándole la oportunidad a los músicos locales de desarrollarse en este ámbito con un ambiente agradable en el que puedan sentirse cómodos para seguir aprendiendo y que se sientan apoyados en todo momento.</h3>

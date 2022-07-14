@@ -26,10 +26,7 @@ export type Concert = {
     concertPhotoKey: string,
     conductor: string,
     soloists: Array<person>,
-    program: {
-      composers: Array<person>,
-      pieces: Array<piece>,
-    }
+    program: Array<piece>,
 }
 
 export type PartialConcert = Partial<Concert>
@@ -43,13 +40,14 @@ export type ConcertDate = {
 }
 
 export type person = {
+    id: string,
     name: string,
     instrument: string,
     shortName: string
 }
 
 export type piece = {
-    composerId: string,
+    composer: person,
     name: string,
     duration: string,
     pieceOrder: number,

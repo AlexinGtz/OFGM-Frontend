@@ -6,6 +6,7 @@ import { HomePage } from "../components/HomePage/HomePage";
 import { Tickets } from "../components/Tickets/Tickets";
 import { ScreenMessage } from "../components/ScreenMessage/ScreenMessage";
 import { useSelector } from "react-redux";
+import { IndividualConcert } from "../components/IndividualConcert/IndividualConcert";
 
 export const MainLayout = () => {
   const { screenMessage } = useSelector((state: any) => state);
@@ -16,6 +17,7 @@ export const MainLayout = () => {
       <NavBar />
       <Routes>
         <Route path="/concerts" element={<Concerts />} />
+        <Route path="/concerts/:id" element={<IndividualConcert />} />
         <Route path="/tickets/:id" element={<Tickets />} />
         <Route path="*" element={<HomePage />} />
       </Routes>

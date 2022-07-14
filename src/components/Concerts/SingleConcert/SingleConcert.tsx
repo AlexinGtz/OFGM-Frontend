@@ -19,7 +19,7 @@ const SingleConcert = (props: SingleConcertProps) => {
     } = convertDateTime(props.concert.concertDate);
 
     const onDetailsClick = () => {
-        navigate(`/tickets/${props.concert.id}`);
+        navigate(`/concerts/${props.concert.id}`);
     }
 
     const onTicketClick = () => {
@@ -58,11 +58,11 @@ const SingleConcert = (props: SingleConcertProps) => {
                     {props.concert.soloists.length > 0 && <h2 className='singleConcertsMainText'>SOLISTAS</h2>}
                     {props.concert.soloists.map((solo) => <h3 key={solo.name} className='singleConcertsText'>{solo.name}, {solo.instrument}</h3>)}
                 </div>
-                <Separator height='10rem'/> {/**MAke Varaible */}
+                <Separator height='10rem'/>
                 <div className='singleConcertsProgramInfo'>
                     <h2 className='singleConcertsMainText'>PROGRAMA</h2>
-                    {props.concert.program.composers.map(
-                        (comp) => <h3 key={comp.shortName} className='singleConcertsText'>{comp.shortName}</h3>)}
+                    {props.concert.program.map(
+                        (piece) => <h3 key={piece.composer.shortName} className='singleConcertsText'>{piece.composer.shortName}</h3>)}
                 </div>
             </div>
             <div className='singleConcertsButtonContainer'>

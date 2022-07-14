@@ -1,0 +1,49 @@
+.individualConcertMainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.individualConcertTitle {
+    margin-top: 3rem;
+}
+
+.individualConcertDateInfo {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.individualConcertDateText {
+    margin: 0 2rem;
+    flex: 1;
+}
+
+.individualConcertImage {
+    width: 70%;
+    margin: 2rem;
+}
+
+.individualConcertInfo {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.individualConcertProgram {
+    flex: 1;
+}
+
+.individualConcertInfoTitle {
+
+}
+
+.individualConcertExtraInfo {
+    flex: 1;
+}
+
+.individualConcertInfoText {
+
+}
