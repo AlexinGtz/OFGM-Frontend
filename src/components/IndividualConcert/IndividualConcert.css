@@ -120,4 +120,26 @@
     .individualConcertImage {
         width: 50%;
     }
+
+    .individualConcertMovements {
+        margin-left: 1rem;
+    }
+}
+
+@media(max-width: 500px) {
+    .individualConcertDateInfo {
+        flex-direction: column;
+    }
+
+    .individualConcertDateText {
+        margin: 0.5rem 0;
+    }
+
+    .individualConcertImage {
+        width: 80%;
+    }
+
+    .individualConcertDuration {
+        margin-right: 2rem;
+    }
 }

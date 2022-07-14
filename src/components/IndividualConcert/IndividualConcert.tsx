@@ -80,9 +80,9 @@ export const IndividualConcert = () => {
         <h1 className='individualConcertTitle'>{concert.concertTitle}</h1>
         <div className='individualConcertDateInfo'>
             <h2 className='individualConcertDateText'>{concertDate.dayNumber} de {concertDate.month}</h2>
-            <Separator height='2.5rem'/>
+            {window.innerWidth > 500 && <Separator height='2.5rem'/>}
             <h2 className='individualConcertDateText'>{concertDate.time}</h2>
-            <Separator height='2.5rem' />
+            {window.innerWidth > 500 && <Separator height='2.5rem'/>}
             <h2 className='individualConcertDateText'>{concert.concertLocationName}</h2>
         </div>
 
