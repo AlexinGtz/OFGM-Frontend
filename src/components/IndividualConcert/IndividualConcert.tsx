@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Separator } from '../Separator/Separator';
-import WholeOrchestra from '../../assets/WholeOrchestra.jpg';
+import Sorpresa from '../../assets/Sorpresa.jpg';
 
 import './IndividualConcert.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Concert, movement, person, piece } from '../../types/concerts.types';
 import { API } from '../../utils/api';
 import { convertDateTime } from '../../utils/dateUtils';
+import { Button } from '../Button/Button';
 
 export const IndividualConcert = () => {
     const { id } = useParams();
     const { concerts } = useSelector((state: any) => state);
     const [concert, setConcert]: [Partial<Concert>, Function] = useState({});
     const api = new API();
+    const navigate = useNavigate();
 
     useEffect(() => {
         let tempConcert = concerts.find((concert: Concert) => concert.id === id);
@@ -31,8 +33,44 @@ export const IndividualConcert = () => {
         return api.get(`/concert/${id}`);
     }
 
-    const buildProgram = () => {
-        return <h1>Hello</h1>
+    const buildProgram = (program: Array<piece>) => {
+        return program.map((piece: piece) => {
+            const composer = <h2 className='individualConcertComposer'>{piece.composer.name}</h2>;
+            const name = <h3>{piece.name}</h3>;
+            const movements = piece.movements.map((mov: movement) => {
+                return <h3 className='individualConcertMovements'>{mov.name}</h3>
+            });
+            const duration = <h3 className='individualConcertDuration'>{piece.duration}</h3>
+
+            return (
+                <div className='individualConcertPiece'>
+                    {composer}
+                    <div className='individualConcertProgramInfo'>
+                        {name}
+                        {movements}
+                        {duration}
+                    </div>
+                </div>
+            );
+        })
+    }
+
+    const buildSoloists = (soloists?: Array<person>) => {
+
+        if(!soloists || soloists.length <= 0){
+            return null;
+        }
+        
+        return (
+            <div>
+                <h1 className='individualConcertInfoTitle'>SOLISTAS</h1>
+                {soloists.map((solo: person) => <h2 className='individualConcertInfoText'>{solo.name}, {solo.instrument}</h2>)}
+            </div>
+        );
+    }
+
+    const handleButtonClick = () => {
+        navigate(`/tickets/${id}`)
     }
 
     const concertDate = convertDateTime(concert.concertDate);
@@ -48,21 +86,25 @@ export const IndividualConcert = () => {
             <h2 className='individualConcertDateText'>{concert.concertLocationName}</h2>
         </div>
 
-        <img src={WholeOrchestra} className='individualConcertImage'/>
+        <div className='individualConcertButton'>
+            <Button onClick={handleButtonClick}>Reservar</Button>
+        </div>
+
+        <img src={Sorpresa} className='individualConcertImage'/>
 
         <div className='individualConcertInfo'>
             <div className='individualConcertProgram'>
                 <h1 className='individualConcertInfoTitle'>PROGRAMA</h1>
+                {concert.program && buildProgram(concert.program)}
             </div>
             <div className='individualConcertExtraInfo'>
                 <h1 className='individualConcertInfoTitle'>DIRECTOR</h1>
-                <h2 className='individualConcertInfoText'>Nombre Apellido</h2>
+                <h2 className='individualConcertInfoText'>{concert.conductor}</h2>
 
-                <h1 className='individualConcertInfoTitle'>SOLISTAS</h1>
-                <h2 className='individualConcertInfoText'>Nombre Apellido, Instrumento</h2>
+                {buildSoloists(concert.soloists)}
 
-                <h1 className='individualConcertInfoTitle'>SALA DE CONCIERTOS</h1>
-                <img className='individualConcertLocationImage'/>
+                {/* <h1 className='individualConcertInfoTitle'>SALA DE CONCIERTOS</h1>
+                <img className='individualConcertLocationImage'/> */}
             </div>
         </div>
     </div>
