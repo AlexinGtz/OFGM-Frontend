@@ -31,6 +31,7 @@
     flex-direction: row;
     width: 80%;
     color: var(--accent-color);
+    margin-bottom: 3rem;
 }
 
 .individualConcertProgram {
@@ -72,11 +73,51 @@
 }
 
 .individualConcertPiece { 
-    margin: 1rem 0;
+    margin: 1rem;
 }
 
 .individualConcertButton {
     width: 8rem;
     height: 3rem;
     margin-top: 1rem;
+}
+
+@media(max-width: 1000px) {
+    .individualConcertInfoTitle {
+        font-size: 30px;
+    }
+
+    .individualConcertInfoText {
+        font-size: 20px;
+    }
+
+    .individualConcertComposer {
+        font-size: 25px;
+    }
+
+    .individualConcertMovements {
+        font-size: 20px;
+    }
+
+    .individualConcertPiece {
+        font-size: 20px;
+    }
+
+    .individualConcertDuration {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 850px) {
+    .individualConcertInfo {
+        flex-direction: column;
+    }
+
+    .individualConcertDuration {
+        margin-right: 8rem;
+    }
+
+    .individualConcertImage {
+        width: 50%;
+    }
 }

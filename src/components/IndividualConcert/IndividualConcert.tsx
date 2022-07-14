@@ -36,7 +36,7 @@ export const IndividualConcert = () => {
     const buildProgram = (program: Array<piece>) => {
         return program.map((piece: piece) => {
             const composer = <h2 className='individualConcertComposer'>{piece.composer.name}</h2>;
-            const name = <h3>{piece.name}</h3>;
+            const name = <h3 className='individualConcertPiece'>{piece.name}</h3>;
             const movements = piece.movements.map((mov: movement) => {
                 return <h3 className='individualConcertMovements'>{mov.name}</h3>
             });
@@ -97,6 +97,7 @@ export const IndividualConcert = () => {
                 <h1 className='individualConcertInfoTitle'>PROGRAMA</h1>
                 {concert.program && buildProgram(concert.program)}
             </div>
+            {window.innerWidth > 850 && <Separator height='40rem' />}
             <div className='individualConcertExtraInfo'>
                 <h1 className='individualConcertInfoTitle'>DIRECTOR</h1>
                 <h2 className='individualConcertInfoText'>{concert.conductor}</h2>
