@@ -59,11 +59,10 @@ const Concerts = () => {
   return (
     <div>
       <h1>Conciertos</h1>
-      <select name='year' className='concertsSelector' onChange={(event) => { yearHandler(event.target.value) }}>
+      <select name='year' className='concertsSelector' value={year} onChange={(event) => { yearHandler(event.target.value) }}>
         <option value='upcoming'>Proximos</option>
-        <option value='2021'>2021</option>
         <option value='2022'>2022</option>
-        <option value='2023'>2023</option>
+        {/* <option value='2023'>2023</option> */}
       </select>
       <div className='concertsList'>
         {concerts.map((concert: Concert) => <SingleConcert key={concert.id} concert={concert}/>)}
