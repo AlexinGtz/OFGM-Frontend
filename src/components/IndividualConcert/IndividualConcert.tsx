@@ -4,15 +4,18 @@ import Sorpresa from '../../assets/Sorpresa.jpg';
 
 import './IndividualConcert.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Concert, movement, person, piece } from '../../types/concerts.types';
 import { API } from '../../utils/api';
 import { convertDateTime } from '../../utils/dateUtils';
 import { Button } from '../Button/Button';
+import { setLoading } from '../../redux/reducers/loadingReducer';
+import { Spinner } from '../Spinner/Spinner';
 
 export const IndividualConcert = () => {
     const { id } = useParams();
-    const { concerts } = useSelector((state: any) => state);
+    const dispatch = useDispatch();
+    const { concerts, loading } = useSelector((state: any) => state);
     const [concert, setConcert]: [Partial<Concert>, Function] = useState({});
     const api = new API();
     const navigate = useNavigate();
@@ -21,13 +24,15 @@ export const IndividualConcert = () => {
         let tempConcert = concerts.find((concert: Concert) => concert.id === id);
 
         if(!tempConcert) {
+            dispatch(setLoading(true));
             fetchConcert().then((concert: Concert) => {
                 setConcert(concert);
+                dispatch(setLoading(false));
             });
         } else{
             setConcert(tempConcert);
         }
-    });
+    }, []);
 
     const fetchConcert = async () => {
         return api.get(`/concert/${id}`);
@@ -74,6 +79,10 @@ export const IndividualConcert = () => {
     }
 
     const concertDate = convertDateTime(concert.concertDate);
+
+    if(loading) {
+        return <Spinner />
+    }
 
   return (
     <div className='individualConcertMainDiv'>

@@ -7,9 +7,10 @@ import { Tickets } from "../components/Tickets/Tickets";
 import { ScreenMessage } from "../components/ScreenMessage/ScreenMessage";
 import { useSelector } from "react-redux";
 import { IndividualConcert } from "../components/IndividualConcert/IndividualConcert";
+import { Spinner } from "../components/Spinner/Spinner";
 
 export const MainLayout = () => {
-  const { screenMessage } = useSelector((state: any) => state);
+  const { screenMessage, loading } = useSelector((state: any) => state);
 
   return (
     <React.Fragment>

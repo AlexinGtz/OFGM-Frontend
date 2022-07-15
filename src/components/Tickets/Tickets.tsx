@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { setLoading } from '../../redux/reducers/loadingReducer';
 import { setAndShowMessage } from '../../redux/reducers/screenMessageReducer';
 import { Concert, ConcertDate, PartialConcert } from '../../types/concerts.types'
 import { API } from '../../utils/api';
@@ -8,12 +9,13 @@ import { convertDateTime } from '../../utils/dateUtils';
 import { validateTicketData } from '../../utils/validation';
 import { Button } from '../Button/Button';
 import { Separator } from '../Separator/Separator';
+import { Spinner } from '../Spinner/Spinner';
 
 import './Tickets.css';
 
 export const Tickets = () => {
   const { id } = useParams();
-  const { concerts }  = useSelector((state: any) => state);
+  const { concerts, loading }  = useSelector((state: any) => state);
   const [concert, setConcert]: [PartialConcert, Function] = useState({});
   const [quantity, setQuantity]: [number, Function] = useState(1);
   const [name, setName]: [string, Function] = useState('');
@@ -25,8 +27,10 @@ export const Tickets = () => {
 
   useEffect(() => {
     if(!concerts.length) {
+      dispatch(setLoading(true));
       api.get(`/concert/${id}`).then((res) => {
         concertHandler(res);
+        dispatch(setLoading(false));
       })
     } else {
         concertHandler(concerts.find((concert: Concert) => concert.id === id));
@@ -61,6 +65,7 @@ export const Tickets = () => {
       }))
       return;
     }
+    dispatch(setLoading(true));
     api.post('/ticketTransaction', {
       atendees: quantity,
       email: mail,
@@ -74,11 +79,13 @@ export const Tickets = () => {
         buttonText: 'Entrada',
         buttonUrl: response.pdfUrl,
       }))
+      dispatch(setLoading(false));
     }).catch(err => {
       dispatch(setAndShowMessage({
         message: err.response.data.message,
         type: 'error'
       }))
+      dispatch(setLoading(false));
     })
   }
 
@@ -92,6 +99,10 @@ export const Tickets = () => {
 
   const confirmMailHandler = (data: string) => {
     setConfirmMail(data);
+  }
+
+  if(loading) {
+    return <Spinner />
   }
 
   return (

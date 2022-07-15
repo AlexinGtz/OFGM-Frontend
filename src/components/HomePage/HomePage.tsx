@@ -7,17 +7,21 @@ import { API } from '../../utils/api';
 import './HomePage.css'
 import { useNavigate } from 'react-router-dom';
 import WholeOrchestra from '../../assets/WholeOrchestra.jpg';
+import { setLoading } from '../../redux/reducers/loadingReducer';
+import { Spinner } from '../Spinner/Spinner';
 
 export const HomePage = () => {
-  const { concerts } = useSelector((state: any) => state);
+  const { concerts, loading } = useSelector((state: any) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const api = new API();
 
   useEffect(() => {
+    dispatch(setLoading(true));
     api.get(`/upcomingConcerts`)
     .then(concerts => {
       dispatch(setConcerts(concerts))
+      dispatch(setLoading(false));
     });
   }, [])
 
@@ -39,6 +43,10 @@ export const HomePage = () => {
         concertId: concert.id,
         buttonText: "Detalles",
     }
+  }
+
+  if(loading) {
+    return <Spinner />
   }
 
   return (
