@@ -4,7 +4,8 @@ export class API {
     client: AxiosInstance;
 
     constructor() {
-        const baseURL = 'https://sgct180v33.execute-api.us-east-1.amazonaws.com/qa'
+        // const baseURL = 'https://sgct180v33.execute-api.us-east-1.amazonaws.com/qa'
+        const baseURL = 'https://0req57xjz5.execute-api.us-east-1.amazonaws.com/prod'
         this.client = axios.create({
             baseURL,
             timeout: 10000,
