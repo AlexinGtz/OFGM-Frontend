@@ -82,7 +82,7 @@ export const Tickets = () => {
       dispatch(setLoading(false));
     }).catch(err => {
       dispatch(setAndShowMessage({
-        message: err.response.data.message,
+        message: err.response.data.message || 'Algo salió mal. Intente de nuevo más tarde',
         type: 'error'
       }))
       dispatch(setLoading(false));
