@@ -76,7 +76,7 @@ export const Tickets = () => {
         message: 'Entrada Reservada con Exito',
         type: 'success',
         enableButton: true,
-        buttonText: 'Entrada',
+        buttonText: 'Descargar Entrada',
         buttonUrl: response.pdfUrl,
       }))
       dispatch(setLoading(false));

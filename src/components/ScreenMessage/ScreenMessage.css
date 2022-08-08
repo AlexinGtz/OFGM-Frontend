@@ -44,9 +44,20 @@
     font-size: x-large;
     text-decoration: underline;
     color: var(--accent-color);
-    width: 3rem;
+    width: 5rem;
 }
 
 .success {
     color: green;
+}
+
+@media (max-width: 500px) {
+    .screenMessageMainDiv{
+        width: 80vw;
+        left: 10vw;
+    }
+
+    .screenMessageAnchor{
+        width: 7rem;
+    }
 }
