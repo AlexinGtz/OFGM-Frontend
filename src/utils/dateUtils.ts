@@ -1,4 +1,14 @@
-export const convertDateTime = (concertDate: string) => {
+export const convertDateTime = (concertDate: string | undefined) => {
+
+    if(!concertDate) {
+        return {
+            dayName: '',
+            dayNumber: '',
+            month: '',
+            year: '',
+            time: '', 
+        }
+    }
 
     const date = new Date(concertDate);
     const options: Intl.DateTimeFormatOptions = { 
@@ -12,5 +22,18 @@ export const convertDateTime = (concertDate: string) => {
 
     const currentDate = date.toLocaleDateString('es-MX', options).split(" ");
 
-    return [`${currentDate[1]} ${currentDate[2]} ${currentDate[3]}, ${currentDate[5]}`, `${currentDate[6]}`]
+    return {
+        dayName: currentDate[0],
+        dayNumber: currentDate[1],
+        month: currentDate[3],
+        year: currentDate[5].split(',')[0],
+        time: currentDate[6], 
+    }
+}
+
+export const isEmptyOrNull = (param: any) => {
+    if(!param || param === "" || param === " "){
+        return true;
+    }
+    return false;
 }

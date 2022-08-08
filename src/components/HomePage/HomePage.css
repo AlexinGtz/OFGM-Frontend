@@ -1,0 +1,47 @@
+.homePageInformation {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homePageTitle {
+    margin: 2rem 3rem;
+}
+
+.homePageMainDiv {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homePageParagraph {
+    text-align: justify;
+    margin: 1rem 1rem;
+}
+
+.homePageConcerts {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.homePageOrchestra {
+    width: 80%;
+}
+
+@media(max-width: 750px){
+    .homePageConcerts {
+        width: 80%;
+    }
+
+    .homePageOrchestra {
+        width: 95%;
+    }
+
+    .homePageParagraph {
+        width: 100%;
+    }
+}

@@ -1,8 +1,10 @@
 .mainPageConcertsDiv{
     display: flex;
     flex-direction: row;
-    width: 35rem;
-    height: 12rem;
+    width: 60%;
+    height: fit-content;
+    margin: 1rem 0;
+    padding: 1rem 0;
     border: 0.15rem solid #262626;
     border-radius: 8px;
     align-items: center;
@@ -47,6 +49,7 @@
 
 .mainPageConcertsTime{
     text-align: end;
+    align-self: baseline;
 }
 
 .mainPageConcertsLocation{
@@ -69,3 +72,41 @@
     height: 2rem;
 }
 
+@media(max-width: 1200px) {
+    .mainPageConcertsDiv{
+        width: 100%;
+    }
+}
+
+@media(max-width: 900px) {
+    .mainPageConcertsDateInfo{
+        font-size: medium;
+    }
+
+    .mainPageConcertsLocation{
+        font-size: medium;
+    }
+
+    .mainPageConcertsEvent{
+        font-size: large;
+    }
+
+    .mainPageConcertsImage{
+        height: 8rem;
+    }
+}
+
+@media(max-width: 600px){
+    .mainPageConcertsDateInfo{
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .mainPageConcertsTime{
+        margin: 0;
+    }
+
+    .mainPageConcertsEvent{
+        margin-top: 0;
+    }
+}

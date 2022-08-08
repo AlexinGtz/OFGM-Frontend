@@ -1,0 +1,16 @@
+.concertsList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    flex-direction: column;
+}
+
+.concertsSelector {
+    width: 7rem;
+    height: 2.5rem;
+    background-color: var(--brown-color);
+    color: white;
+    border: 1px solid black;
+    font-size: var(--small-text);
+}
