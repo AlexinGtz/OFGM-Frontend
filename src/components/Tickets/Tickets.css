@@ -1,0 +1,126 @@
+.ticketsMainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.ticketsDateInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.ticketsHeader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.ticketsForm {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #262626;
+    border-radius: 5px;
+    width: 50%;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.ticketsSelectQuantity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.ticketsQuantity {
+    user-select: none;
+    margin: 0 1rem;
+}
+
+.ticketsButton {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem;
+}
+
+.ticketsGetButton {
+    width: 10rem;
+    height: 3rem;
+    margin: 2rem;
+}
+
+.ticketsData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+}
+
+.ticketsLabel {
+    font-weight: bold;
+    margin: 1.5rem 0 0.2rem 0 ;
+    text-align: left;
+    width: 100%;
+    user-select: none;
+    color: var(--accent-color);
+}
+
+.ticketsPdfButton {
+    width: 8rem;
+    height: 3rem;
+}
+
+.ticketsInput {
+    width: 100%;
+    height: 1.5rem;
+    font: inherit;
+    margin: 0 0 1rem 0;
+    border-radius: 5px;
+    font-weight: 900;
+    padding: 0 0.5rem;
+}
+
+.ticketsDateEntry {
+    margin: 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+.ticketsTitle {
+    margin-top: 3rem;
+    color: var(--accent-color);
+}
+
+@media(max-width: 1200px) {
+    .ticketsForm {
+        width: 90%;
+    }
+
+    .ticketsData {
+        width: 80%;
+    }
+
+    .ticketsDateEntry{
+        font-size: larger;
+    }
+}
+
+@media(max-width: 500px) {
+    .ticketsForm {
+        width: 90%;
+    }
+
+    .ticketsData {
+        width: 90%;
+    }
+
+    .ticketsDateEntry{
+        font-size: larger;
+    }
+}

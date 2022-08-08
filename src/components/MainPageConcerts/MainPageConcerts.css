@@ -1,0 +1,112 @@
+.mainPageConcertsDiv{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: fit-content;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border: 0.15rem solid #262626;
+    border-radius: 8px;
+    align-items: center;
+    color: var(--text-color);
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.mainPageConcertsDiv:hover {
+    animation-name: grow;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes grow {
+    0%,
+    100% {
+        transform: scale(1,1);
+    }
+    50% {
+        transform: scale(1.04,1.04);
+    }
+}
+
+.mainPageConcertsInfo{
+    flex: 3;
+    margin-right: 2rem;
+}
+
+.mainPageConcertsImage{
+    height: 10rem;
+    margin: 0 2rem;
+    user-select: none;
+    flex: 1;
+}
+
+.mainPageConcertsDateInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mainPageConcertsTime{
+    text-align: end;
+    align-self: baseline;
+}
+
+.mainPageConcertsLocation{
+    text-align: left;
+    margin: 0;
+}
+
+.mainPageConcertsEvent{
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.mainPageConcertsButton{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mainPageConcertsButtonClass{
+    width: 6rem;
+    height: 2rem;
+}
+
+@media(max-width: 1200px) {
+    .mainPageConcertsDiv{
+        width: 100%;
+    }
+}
+
+@media(max-width: 900px) {
+    .mainPageConcertsDateInfo{
+        font-size: medium;
+    }
+
+    .mainPageConcertsLocation{
+        font-size: medium;
+    }
+
+    .mainPageConcertsEvent{
+        font-size: large;
+    }
+
+    .mainPageConcertsImage{
+        height: 8rem;
+    }
+}
+
+@media(max-width: 600px){
+    .mainPageConcertsDateInfo{
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .mainPageConcertsTime{
+        margin: 0;
+    }
+
+    .mainPageConcertsEvent{
+        margin-top: 0;
+    }
+}

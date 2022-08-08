@@ -5,3 +5,11 @@
     padding: 0.5rem 0;
     flex: 0;
 }
+
+@media (max-width: 900px) {
+    .Logo {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 2rem;
+    }
+}
